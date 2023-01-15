@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,43 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //db(nome_del_file).comics(chiave_dell'array)
-    //dd(config('db.comics'));
-    $comics = config('db.comics');
-    //aggiungo compact al return per accedere alla variabile
-     return view('comics', compact('comics'));
- })->name('comics');
-
-
-Route::get('/characters', function () {
-    return view('characters');
- })->name('characters');
- 
- Route::get('/movies', function () {
-    return view('movies');
- })->name('movies');
- 
- Route::get('/tv', function () {
-    return view('tv');
- })->name('tv');
- 
- Route::get('/games', function () {
-    return view('games');
- })->name('games');
- 
- Route::get('/collectibles', function () {
-    return view('collectibles');
- })->name('collectibles');
- 
- Route::get('/videos', function () {
-    return view('videos');
- })->name('videos');
- 
- Route::get('/fan', function () {
-    return view('fan');
- })->name('fan');
- 
- Route::get('/shop', function () {
-    return view('shop');
- })->name('shop');
+//PageController per pagine statiche
+Route::get('/', [PageController::class, 'index'])->name('comics');
+Route::get('/characters', [PageController::class, 'characters'])->name('characters');
+Route::get('/movies', [PageController::class, 'movies'])->name('movies');
+Route::get('/tv', [PageController::class, 'tv'])->name('tv');
+Route::get('/games', [PageController::class, 'games'])->name('games');
+Route::get('/collectibles', [PageController::class, 'collectibles'])->name('collectibles');
+Route::get('/videos', [PageController::class, 'videos'])->name('videos');
+Route::get('/fan', [PageController::class, 'fan'])->name('fan');
+Route::get('/shop', [PageController::class, 'shop'])->name('shop');
