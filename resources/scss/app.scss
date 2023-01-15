@@ -1,1 +1,22 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+header {
+
+    .nav-link {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .search{
+        font-size: bold;
+        text-align: right;
+    }
+
+    .jumbotron{
+        background-image: url('../img/jumbotron.jpg');
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
